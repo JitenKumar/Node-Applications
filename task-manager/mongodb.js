@@ -2,17 +2,14 @@ const mongodb = require("mongodb");
 
 const MongoClient = mongodb.MongoClient;
 
-const connectionURL = "mongodb://localhost:27017";
-const databaseName = "task-manager";
-
 MongoClient.connect(
-  connectionURL,
+  process.env.connectionURL,
   { useNewUrlParser: true },
   (error, client) => {
     if (error) {
       return console.log("Error in Connection");
     }
-    const db = client.db(databaseName);
+    const db = client.db(process.env.databaseName);
     db.collection("users").insertMany([ {
         name: "jiten",
         age: 24,
