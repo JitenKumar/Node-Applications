@@ -38,5 +38,5 @@ const sendCancelEmail = (email, name) => {
   };
 
 module.exports = {
-  sendWelcomeEmail,
+  sendWelcomeEmail,sendCancelEmail
 };
